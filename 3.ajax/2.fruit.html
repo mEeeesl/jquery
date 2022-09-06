@@ -1,0 +1,42 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        let table = $('tbody')
+
+        $('button').click(() => {
+            $.ajax({
+                url: '2.data.json',
+                //type: 'get', type을 안쓰면, 자동 get 상태
+                success: data => { // data = 2.data.json의 deserializing
+                    // 과제: table 을 채워라.
+                    let fruits = data.fruits // 배열인 value를 담음
+                    let fruit, col, val, tr, td // 배열의 원소, col,val,tr,td
+
+                    for(let row in fruits) { // in - key를 읽고, of - value를 읽음
+                        fruit = fruits[row] 
+                        tr = table.find('tr').eq(row)
+
+                        col = 0
+                        for(let key in fruit) {
+                            val = fruit[key]
+                            td = tr.find('td').eq(col++)
+                            td.text(val)
+                        }
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+<button type='button'>load</button>
+
+<table>
+    <thead>
+        <tr><th>이름</th><th>가격</th><th>기한</th><th>생산자</th></tr>
+    </thead>    
+    <tbody>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+</table>

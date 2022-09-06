@@ -1,0 +1,11 @@
+<script>
+    window.onerror = (msg, url, line, col, err) => { // err 발생시 작동할 handler 
+        document.write(`${msg}<br>`) // err msg
+        document.write(`at ${line}:${col} of ${url}`) // err 위치
+        document.write('<hr>')
+        document.write(err)
+    } // 직접 쓸일은 없음
+
+
+a // ReferenceError: a is not defined
+</script>

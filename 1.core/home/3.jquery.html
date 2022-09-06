@@ -1,0 +1,30 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    let msg = 'div.foo가 '
+
+    $(() => {
+        /*
+        if($('div.foo').length) msg += '있다.'
+        else msg += '없다'
+        */
+       msg += $('div.foo').length ? '있다.' : '없다.'
+    
+       console.log(msg)
+    })
+
+</script>
+
+<body>
+    <div class='fool'></div>
+</body>
+
+<!-- 
+    jQuery는 cellection을 리턴하는데,
+    해당 collection을 못 찾으면,
+    원소가 없는 collection을 리턴
+
+    배열에서 원소가 있는지 없는지 확인하는
+    속성을 이용해서, 과제를 해결..
+    
+
+-->

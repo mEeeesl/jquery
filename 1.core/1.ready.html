@@ -1,0 +1,15 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    jQuery(document).ready(() => $('body').append('<p>one</p>')) //body type의 dom을 jQuery객체로 포장하고 append(<p>객체를만들어서 추가)
+                        //  ▼ Dom     append.(<tag> text <tag> = element) = 파라미터의 객체를 만듬
+    $(document).ready(() => $('body').append('<p>two<p>'))
+                            // <p> - p element , three - text element
+    let readyFn = () => $('body').append('<p>three</p>')
+    $(document).ready(readyFn)
+    // $() = jQuery(document) , 변수할때 $는 안쓰는게 낫다고함? ( 왜곡이 가능해서 )
+    $(() => $('body').append('<p>four</p>'))
+</script>
+
+<!-- $() = sellector = 객체를 찾는것 -->
+<!-- 파라미터로 DOM or sellctor {ex ('body')} 받음 -->
+<!-- jquery의 리턴값 = collection    -->

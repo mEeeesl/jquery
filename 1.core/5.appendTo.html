@@ -1,0 +1,31 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        //$('div').appendTo($('hr')) 
+        //div를 appendTo(~에 더하라) hr에 추가
+        //hr의 내부에 div를 넣음 
+        //div원 2개 만들었었는데 총 4개됨
+        //모든 원소를 대상으로 append하니까
+
+        //과제: 위를 append()로 refactoring 하라.
+        $('hr').append($('div')) // hr에 append(더해라) div를
+    })
+</script>
+
+<style>
+    div {
+        background-color: orange;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+    }
+
+    hr {
+        border: .1rem solid;
+    }
+</style>
+
+<div></div>
+<div></div>
+<hr></hr>
+<hr></hr>

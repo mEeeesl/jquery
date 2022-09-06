@@ -1,0 +1,39 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        $('button').click(() => {
+            $.ajax({ // request를 담고, 현재는 live server가 받음.
+                url: '1.data.json', // request를 담을 url, 이걸 찾고 client에게 response 보냄
+                data: {id: 'yellow'}, // request를 담을 data ( request data type = text type ) // serializing
+                type: 'get', // get = read, / get, first - request type
+                dataType: 'json', // server와 주고받는 dataType
+                // ▲ request 
+                // ▼ response
+                success: (data, status, xhr) => { //response dataType - text type / pharse, deserializing
+                    $('<h3>').text(data.userName).appendTo('body')
+                    $('<p>').html(status).appendTo('body')
+                    console.log(xhr)
+                },
+                error: (xhr, status) => {
+                    console.log('error: ', status) // status - error - status: 404(error numbers)
+                    console.log(xhr)
+                },
+                complete: (xhr, status) => {
+                    console.log('complete: ', status) //status - success - status:200
+                }
+            })
+        })
+    })
+</script>
+
+<button type='button'>click</button>
+
+<!-- 
+    ajax, Asynchrous Javascript And Xml 
+ Asynchrous 비동기 
+ 동시에 똑같이 진행되지 않는다는 뜻을 가지고 있다.
+ 작업들의 요청과 응답의 타이밍이 같지 않아도 된다는 것이다
+
+ request - client가 server에게 보내는 data의 집합
+ response - server가 client에게 보내는 data의 집합
+-->

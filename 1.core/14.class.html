@@ -1,0 +1,23 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        let h1 = $('h1')
+
+        h1.addClass('blue')
+        h1.removeClass('blue')
+        h1.toggleClass('blue') // on
+        h1.toggleClass('blue') // off
+        h1.toggleClass('blue') // on
+
+        h1.hasClass('blue') && console.log('blue') // true면, 실행
+    })
+</script>
+
+<style>
+    .blue {
+        color: blue;
+    }
+</style>
+
+<h1>HELLO</h1>
+<h1>WORLD</h1>

@@ -1,0 +1,22 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { // child 많이씀
+        console.log($('.1').children())// 한 칸 아래
+        // div.2-1 div.2-2 div.2-3
+
+        console.log($('.1').find('div'))//find 자식 싹다 
+        // div.2-1 div.3 div.4 div.2-2 div.2-3
+    })
+</script>
+
+<pre>
+    <div class='1'>
+        <div class='2-1'>
+            <div class='3'>
+                <div class='4'></div>
+            </div>
+        </div>
+        <div class='2-2'></div>
+        <div class='2-3'></div>
+    </div>
+</pre>

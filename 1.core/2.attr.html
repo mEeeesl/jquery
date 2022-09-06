@@ -1,0 +1,24 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+$(() => {   //attr의 0번째 원소의 attr value에 관심이 있기에, f12 - console 창을보면 google로 확인됨
+    console.log($('a').attr('href')) // a가 2개 들어있음.attr('attrName') = attr의value 리턴
+    
+    //collectin안에 a가 2개있고, 모든 원소의 href value값을 daum으로 바꿈
+    $('a').attr('href', 'https://www.daum.net/')
+
+    $('a').attr({
+        href: 'https://jquery.com',
+        target: '_blank' // 새로운 창(탭)에 www.jquery.com 실행
+    })
+
+    $('a').removeAttr('target')
+})
+</script>
+
+<!-- attribute -->
+<a href='https://www.google.co.kr./'>google</a>
+<a href='https://www.naver.com/'>naver</a>
+
+<!--
+    rendering = 입력값을 화면에 출력해주는 작업.
+-->

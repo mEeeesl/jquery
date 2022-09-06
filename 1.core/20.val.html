@@ -1,0 +1,56 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        // 과제 : text 변수에, <input type='text'>를 찾아서 담아라.
+        let text = $(':text') // $('form :text')
+        console.log(text)
+        console.log('|' + text.val() + '|') // 값을 읽을때 .val()  ( 서버에 넘기는건 다음달 )
+
+        text.val(' world ')  // .val('원하는 설정값') = 값을 설정함.
+        // input text란에' world'가 자동 setting됨
+
+        // 과제: text 의 value를 trim 해서, text에 저장하라.
+        //text.val(text.val().trim())   1번
+        text.val($.trim(text.val())) // 2번
+        console.log('|' + text.val() + '|')
+
+        text.val((i, v) => `hello ${v}`) //val(callback fn)
+
+        // checked - 밤, 산, apple
+        //$(':checked').each((i, e) => console.log(e))
+        // 업무를 진행할 땐, 객체가 아니라 value가 필요함
+        $(':checked').each((i, e) => console.log(e.value))
+        $(':checked').each((i, e) => console.log($(e).val()))
+
+        // checked 해주는 효과
+        $('input').val(['noon', 'sea', 'banana']) // checkbox, radio - 1개여도 []
+        $('#fruit').val(['banana']) // select만 할땐 [] 삭제가능
+        $('#greens').val(['cucumber', 'carrot']) // select도 2개 이상이면 []
+    })
+</script>
+       <!-- http - text  / java - string -->
+<form> <!-- http에서는, request에 담기는 type은 string(text) 이다. -->
+    <input type='text' value=' hello '/><br>
+
+    <input type='checkbox' value='night' checked/>밤
+    <input type='checkbox' value='noon' />낮 <br>
+
+    <input type='radio' value='mountain' checked/>산
+    <input type='radio' value='sea'/>바다 <br>
+
+    <select id='fruit'>
+        <option>apple</option> <!-- 첫번째 값이 화면에 우선 나오게됨, 서버로 넘기면 첫번째 값을 우선 넘김 -->
+        <option>banana</option>
+    </select>
+
+    <select id='greens' multiple> <!-- multiple은 선택지가 많아서 base가 no check 임-->
+        <option>cucumber</option>
+        <option>cabbage</option>
+        <option>carrot</option>
+    </select>
+</form>
+
+<!--  
+    값을 읽을때 .val()
+    값을 설정할때 .val('원하는 설정값')
+-->

@@ -1,0 +1,26 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        $('body').data('foo', 10) // data(k, v)
+        $('body').data('bar', {isManual: true})
+        $('body').data({
+            baz: [1, 2],
+            hoi: 'hello'
+        })
+
+        console.log($('body').data('foo')) // data(k) => console에 v 출력
+        console.log($('body').data('bar'))
+        console.log($('body').data('baz'))
+
+        console.log($('body').data()) // 4개의 entry가 들어있음
+        /*
+        bar: {isManual: true}
+        baz: (2) [1, 2]
+        foo: 10
+        hoi: "hello"
+        [[prototype]]: Object
+        */
+    })
+</script>
+
+<!-- 업무상 필요한 데이터를 넣을 수 있다. -->

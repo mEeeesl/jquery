@@ -1,0 +1,11 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {  // keybord change - keyup, keydown, keypress
+        $('input').keyup(function() {
+            $('span').text($(this).val())
+        })
+    })
+</script>
+
+<input type='text'/>
+<span></span>

@@ -1,0 +1,36 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { 
+        let greet = ' hello world '
+        log(greet.replace(' ', '')) // 처음 발견된것만 수정 후 종료
+        log(greet.replaceAll(' ','')) // 모두 수정
+        log(greet.replace(/\s/,'')) // 처음 발견된 것만 수정 후 종료
+        log(greet.replace(/\s/g,'')) // 모두 수정
+        log(greet.replace(/^\s/g,'')) // ^ 첫번째 스페이스
+        log(greet.replace(/\s$/g,'')) // $ 마지막 스페이스
+        log(greet.replace(/^\s|\s$/g, '')) //^ | $ 첫 | 마지막 스페이스
+        
+        greet = '1-2-3,-4-5'
+        console.log(greet.replace(/-/g, '')) // 123,45
+        console.log(greet.replace(/,/g, '')) // 1-2-3-4-5
+        console.log(greet.replace(/[-,]/g, '')) // 12345
+                                //[-,] => '-'와 ','
+        greet = '1-,2-,3'       //-, => '-,'
+        console.log(greet.replace(/-,/g, '')) // 123
+
+        greet = 'hello\nworld'
+        console.log(greet)
+        // 과제: helloworld
+        console.log(greet.replace(/\n/g, ''))
+    }) 
+
+    function log(str) {
+        console.log('|' + str + '|')
+    }
+</script>
+
+<!--
+ replace - 처음에 발견한 것만 바꾸고 종료
+ replaceAll - 전부다 바꿈
+
+-->

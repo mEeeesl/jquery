@@ -1,0 +1,12 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { // prevent = handler 의 작동을 막음
+        $('a').click(e => { // 파라미터로 event 객체를 받음
+            e.preventDefault() // 'a'객체의 event에 대한 기본 handler( page 이동 )을 막음
+            $('body').append('<p>prevent dafault handler</p>')
+        })
+    })
+</script>
+
+<a href='https://jquery.com'>jquery</a> 
+<!-- Click시, event 발생해서 사이트로 이동-->

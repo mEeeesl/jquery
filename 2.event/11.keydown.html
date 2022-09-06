@@ -1,0 +1,14 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { // e.keyCode == 13(enter) - enter 키
+        $(':password').keydown(e => {
+            if(e.keycode == 13) $('form').submit()
+        })
+    })
+</script>
+
+<form>
+    <input type='text' name='id'/>
+    <input type='password' name='pw'/>
+    <input type='submit'/>
+</form>

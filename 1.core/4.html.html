@@ -1,0 +1,48 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+$(() => { // h1 찾고, html을 읽어낸다
+    console.log($('h1').html()) //read - 1개만
+    // 주어객체의 0번째 겍체의 content를 가져옴
+    
+    $('footer').html('<mark>foot</mark>') //write - 모든걸 다, contents 자식 추가
+    console.log($('footer').html())
+
+    //header의 h1객체의 2번째객체의 html을 읽어냄 (text로?)
+    console.log($('header').find('h1').eq(1).html())
+
+    //find('a') - a 객체를 찾음 
+    $('header').find('h1').eq(1).html('<hr>') // eq(1)인 world가 <hr> element로 변경
+
+    //$('ul').find('li').eq(2).html('index: 2') // "index: 2" 라는 contents 추가
+    
+    // end - chainning을 끝내고 원점으로돌아감 ( 원점 = find('li') )
+    $('ul').find('li').eq(2).html('index: 2').end()
+        .eq(3).html('index: 3').end()
+        .eq(4).html('index: 4')
+
+    $('h1').text('Hi') //text - element가 아니기에 tag는 사용못함
+    console.log($('h1').text()) // h1 2개를 다 읽음
+})
+</script>
+
+<header>
+    <h1><b>hello</b></h1>   <!-- eq(0) -->
+    <h1>world</h1>          <!-- eq(1) -->
+</header>
+
+<ul>
+    <li></li> <!-- eq(0)-->
+    <li></li>
+    <li></li> <!-- eq(2)-->
+    <li></li>
+    <li></li>
+</ul>
+
+<footer></footer>
+
+<!--
+    append(선택값) - 선택한 요소 내부의, '끝' 부분에 삽입
+    prepend(선택값) - 선택한 요소 내부의, '시작' 부분에 삽입
+    선택값.after(넣을거) - 선택한 요소 바로 뒤에 삽입
+    선택값.before(넣을거) - 선택한 요소 바로 앞에 삽입
+-->

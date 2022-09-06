@@ -1,0 +1,19 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { // jQuery Object 처럼 보이게 $div1로 표현 - jQuery method call 가능
+        let $div1 = $('div')    // return type = jQuery = collection
+        let $div2 = $div1.eq(0) // return type = jQuery = collection
+        let div3 = $div1.get(0) // return type = html element
+        console.log($div1, $div2, div3)
+        console.log(typeof $div1, typeof $div2, typeof div3) // object
+
+        let $div11 = $('div')
+        let $div22 = $div11.eq(0)
+        let div33 = $div1.get(0)
+        console.log($div1 == $div11, $div2 == $div22, //false
+        //sellection은 같은 'div'지만, 다른 collection 객체를 리턴한다.
+                     div3 == div33)  // true
+    })
+</script>
+
+<div></div>

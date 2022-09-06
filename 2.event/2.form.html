@@ -1,0 +1,32 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {   //button의 click handler 등록
+        $('button').click(() => {
+            //과제: userName field에 값을 입력했으면, 을 구현
+            if($(':text').val()) $('form').submit() // submit event 발생
+            //과제: '사용자명을 입력하세요.' error message를 <span>에 출력하라.
+            //else $('span').append('<mark>사용자명을 입력하세요.</mark>')
+            //else $('span').html('<mark>사용자명을 입력하세요.</mark>')
+            //else $('span').text('사용자명을 입력하세요.') //text는 element가 아니기에, tag(<mark>는 사용불가)
+            
+            //과제: 에러메세지를 빨간색으로 출력하라.
+            //else $('span').text('사용자명을 입력하세요.').css('color', 'red')
+
+            //과제: 에러메세지를 빨간색으로 출력하고, userName field의 border를 점선
+            else {
+                $('span').text('사용자명을 입력하세요.').css('color', 'red')
+                $('[name="userName"]').css('border', 'red .1rem dotted')
+            }
+        })
+    })
+</script>
+
+<form>
+    <input type='text' name='userName' placeholder='사용자명'/><span></span><br>
+    <button type='button'>submit</button>
+</form>
+
+<!--
+    form을 작성하다 - form 안에 내용(field)을 코딩하다.
+    form을 제출하다 - submit 버튼 click
+-->

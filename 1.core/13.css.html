@@ -1,0 +1,23 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        console.log($('h1').css('font-size')) // 32px
+        console.log($('h1.big').css('font-size', '3rem')) // 설정
+        $('h1.big').css({
+            'font-size': '4rem', // 2개 단어 이상이면 ' '로 묶음
+            color: 'red'    // value는 ' '로 묶음
+        })
+    })
+</script>
+
+<!-- h1 = 1rem(16px) * 2 = 32px -->
+<h1>Hello</h1>
+<h1 class='big'>World</h1>
+
+
+<!--
+
+    html에서 tag의 속성 = attribute
+    css에서 속성 = property
+
+-->

@@ -1,0 +1,36 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { //best
+        let items = []
+        for(let i = 0; i < 10; i++)
+            items.push(`<li>item ${i}</li>`)
+        
+        $(items.join('')).appendTo('ul')
+        
+        /* 이렇게하면 rendering 작업을 10번해야해서 비효율
+        for(i = 0; i <= 10; i++){
+            $('<li>').appendTo('ul').html('item '+ i)
+        } 
+
+        for(i = 0; i < 10; i++){
+            $(`<li>item ${i}</li>`).appendTo('ul')
+        }
+        */
+    })
+
+</script>
+
+<ul>
+</ul>
+
+<!-- 과제: 아래와 같은 ul을 만들어라
+
+    <ul>
+        <li>item 0</li>
+        <li>item 1</li>
+        ...
+        <li>item 9</li>
+    <ul>
+
+
+-->

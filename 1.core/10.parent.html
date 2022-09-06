@@ -1,0 +1,35 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { // parent() 부모를 찾아가는 방식
+        console.log($('.4').parent()) // div.3
+        
+        console.log($('.4').parents()) 
+        // div.3 div.2-1 div.1 pre body html
+        
+        console.log($('.4').parents('div'))
+        // div.3 div.2-1 div.1
+        
+        console.log($('.4').parents('pre')) // pre
+
+        console.log($('.4').parentsUntil('div.1'))
+        // div.3 div.2-1 ( parenstsUntil = 미만 )
+
+        console.log($('.4').closest('div')) // closest - 1개만 리턴
+        // div.4 
+        // ( closest = 나 이상, 가장 가까운 부모요소에서 'div'찾음)
+        // 자기자신도 포함
+
+    })
+</script>
+
+<pre>
+    <div class='1'>
+        <div class='2-1'>
+            <div class='3'>
+                <div class='4'></div>
+            </div>
+        </div>
+        <div class='2-2'></div>
+        <div class='2-3'></div>
+    </div>
+</pre>

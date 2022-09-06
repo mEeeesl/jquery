@@ -1,0 +1,41 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => { // change event
+        /*
+        $('#wrap').on({
+            change() {
+                $('span').text($(this).val()) // this - change된게 들어가짐
+            }
+        })
+        */
+
+        // 과제: span에 메시지 출력
+
+        /* ▼ 1번
+        $('#wrap').on({
+            change() {
+                $('span').text($(this).val())
+            }
+        }, '.c') // 상기 fn을, #wrap 자식중 '.c'에게 적용
+
+           ▼ 2번 */
+       $('#wrap').on('change', '.c', function() {
+            $('span').text($(this).val())
+       })
+    })
+</script>
+
+<div id='wrap'>
+    <select id='fruit' class='c'>
+        <option>select1</option>
+        <option>select2</option>
+    </select>
+    
+    <input type='checkbox' value='check' class='c'/>
+    <input type='radio' value='radio' class='c'/>
+    
+    <input type='text' class='c'/>
+    <!-- enter key 누르면, change event 발생 -->
+</div>
+
+<span></span>

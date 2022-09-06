@@ -1,0 +1,17 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        let cnt = 0
+
+        // callback = handler (click을 click하면 handler(fn)실행)
+        $('button').eq(0).click(() => $(`<li>${cnt++}</li>`).appendTo('ul'))
+
+        $('button').eq(1).click(() => $('ul').empty())
+
+        // hr 할 때 이걸 사용하면 좋음.
+    })
+</script>
+
+<button type='button'>click</button>
+<button type='button'>clear</button>
+<ul></ul>

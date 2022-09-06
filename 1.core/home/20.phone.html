@@ -1,0 +1,15 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        //과제: 전화번호를 숫자만으로 정제
+        // 1번 $('input').val($('input').val().split('-').join(''))
+
+        // 2번 $('input').val($('input').val().replaceAll('-',''))
+
+        $('input').val($('input').val().replace(/-/g, '')) // 3번
+    })
+</script>
+
+<form>
+    <input type='tel' value='010-1234-5678'/>
+</form>

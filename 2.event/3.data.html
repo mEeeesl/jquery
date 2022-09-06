@@ -1,0 +1,17 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    $(() => {
+        $('button').click('abel', e => { //handler 생성, abel 객체가 e에 들어감
+            let userName = $('input').val() // 입력값
+            if(userName == e.data) { // 입력값이 'abel'이면
+                $('span').text(` valid: ${e.data}`).show().fadeOut(1000)
+                $('form').submit()
+            } else $('span').text(` invalid: ${userName}`)
+        })
+    })
+</script>
+
+<form>
+    <input type='text' name='userName' placeholder='사용자명'/><span></span><br>
+    <button type='button'>submit</button>
+</form>
